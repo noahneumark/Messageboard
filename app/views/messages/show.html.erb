@@ -1,2 +1,20 @@
+
 <h3><%= @message.title %></h3>
-<p><%= @message.body %></p>
+<div style="font-size:.8em;">
+  <span>Posted by </span>
+  <span style="font-weight:bold;"><%= @message.user.email %></span>
+  <span><%= time_ago_in_words(@message.created_at) %> ago</span>
+</div>
+<div class="bg-info">
+  <div class="container" style="padding: 15px;">
+    <%= @message.body %>
+  </div>
+</div>
+
+<h4>Comments:</h4>
+
+<%= render @message.comments.order("created_at") %>
+<br>
+<% if user_signed_in? %>
+  <%= render './comments/form' %>
+<% end %>
