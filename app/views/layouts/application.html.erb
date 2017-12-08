@@ -23,6 +23,9 @@
             <li><%= link_to "Log In", new_user_session_path %></li>
           <% end %>
         </ul>
+        <% if user_signed_in? %>
+          <p class="navbar-right navbar-text"><%= current_user.first %> <%= current_user.last %></p>
+        <% end %>
       </div>
     </div>
 

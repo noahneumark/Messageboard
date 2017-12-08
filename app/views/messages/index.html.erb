@@ -5,6 +5,7 @@
     <thead>
       <tr>
         <th>Title</th>
+        <th>Author</th>
         <th>Created</th>
       </tr>
     </thead>
@@ -12,7 +13,8 @@
       <% @messages.each do |message| %>
         <tr>
           <td><%= link_to message.title, message_path(message) %></td>
-          <td><%= message.created_at %></td>
+          <td><%= message.user.first %> <%= message.user.last %></td>
+          <td><%= message.created_at.in_time_zone("Pacific Time (US & Canada)").strftime("%m/%d/%Y %I:%M%p %Z") %></td>
         </tr>
         <br>
       <% end %>

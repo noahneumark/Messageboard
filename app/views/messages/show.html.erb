@@ -2,7 +2,7 @@
 <h3><%= @message.title %></h3>
 <div style="font-size:.8em;">
   <span>Posted by </span>
-  <span style="font-weight:bold;"><%= @message.user.email %></span>
+  <span style="font-weight:bold;"><%= @message.user.first %> <%= @message.user.last %></span>
   <span><%= time_ago_in_words(@message.created_at) %> ago</span>
 </div>
 <div class="bg-info">
