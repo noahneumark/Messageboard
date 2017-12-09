@@ -1,5 +1,5 @@
 <%= simple_form_for @message do |f| %>
-  <%= f.input :title, placeholder: "Title" %>
-  <%= f.input :body, placeholder: "Enter a message" %>
+  <%= f.input :title, required: true, placeholder: "Title" %>
+  <%= f.input :body, required: true, placeholder: "Enter a message" %>
   <%= f.button :submit %>
 <% end %>
