@@ -9,7 +9,7 @@
     <%= f.input :email, required: true %>
     <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
     <%= f.input :password_confirmation, required: true %>
-    <%= f.input :aboutme %>
+    <%= f.input :aboutme, label: 'About Me'%>
   </div>
 
   <div class="form-actions">
